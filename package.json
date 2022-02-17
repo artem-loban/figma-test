@@ -1,8 +1,8 @@
 {
   "name": "figma-test",
-  "version": "1.0.0",
-  "description": "A figma plugin to push icon svg code to Github automatically.",
-  "author": "felix-memo",
+  "version": "0.2.0",
+  "description": "jhgjhg",
+  "author": "artem-loban",
   "license": "MIT",
   "scripts": {
     "dev": "npx webpack --mode=development --watch",
