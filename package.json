@@ -1,57 +1,29 @@
 {
   "name": "figma-test",
-  "version": "0.1.2",
-  "description": "jhgjhg",
-  "author": "artem-loban",
+  "version": "1.0.0",
+  "description": "A figma plugin to push icon svg code to Github automatically.",
+  "author": "felix-memo",
   "license": "MIT",
-  "repository": "artem-loban/figma-test",
-  "main": "dist/index.js",
-  "module": "dist/index.modern.js",
-  "source": "src/index.js",
-  "engines": {
-    "node": ">=10"
-  },
   "scripts": {
-    "fetch": "node bin/fetchSVG.js",
-    "build:bundle": "sudo rm -rf dist && node_modules/.bin/rollup --c ./build/rollup.config.bundle.js",
-    "build": "rollup -c ./build/rollup.config.prod.js",
-    "generate": "sudo rm -rf src/icons && node bin/build.js",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs",
-    "prepare": "run-s build",
-    "test": "run-s test:unit test:lint test:build",
-    "test:build": "run-s build",
-    "test:lint": "eslint .",
-    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build",
-    "dev": "rollup -w -c ./build/rollup.config.dev.js"
+    "dev": "npx webpack --mode=development --watch",
+    "build": "npx webpack --mode=production"
   },
-  "peerDependencies": {
-    "react": "^16.0.0"
+  "dependencies": {
+    "css-loader": "^3.2.0",
+    "html-webpack-inline-source-plugin": "^0.0.10",
+    "html-webpack-plugin": "^3.2.0",
+    "parse-github-url": "^1.0.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "style-loader": "^1.0.0",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
   },
   "devDependencies": {
-    "microbundle-crl": "^0.13.10",
-    "babel-eslint": "^10.0.3",
-    "cross-env": "^7.0.2",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-config-standard-react": "^9.2.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "gh-pages": "^2.2.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
-  },
-  "files": [
-    "dist"
-  ]
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.8.5"
+  }
 }
